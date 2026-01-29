@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoodieStore - Premium Hoodies & Streetwear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧥</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="logo">HoodieStore</h1>
+                    <span class="tagline">Premium Streetwear</span>
+                </div>
+                <nav class="nav">
+                    <a href="#products" class="nav-link">Shop</a>
+                    <a href="#collections" class="nav-link">Collections</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search hoodies..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Premium Hoodies</h2>
+                    <p>Comfortable, stylish, and built to last. Discover our collection of premium hoodies.</p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">Shop Now</a>
+                        <a href="#collections" class="btn btn-secondary">View Collections</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Collections -->
+        <section id="collections" class="collections">
+            <div class="container">
+                <h2 class="section-title">Featured Collections</h2>
+                <div class="collections-grid">
+                    <div class="collection-card">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop" alt="Classic Collection">
+                        <div class="collection-info">
+                            <h3>Classic Collection</h3>
+                            <p>Timeless designs for everyday wear</p>
+                            <a href="#products" class="btn btn-outline">Shop Classic</a>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Sport Collection">
+                        <div class="collection-info">
+                            <h3>Sport Collection</h3>
+                            <p>Performance meets style</p>
+                            <a href="#products" class="btn btn-outline">Shop Sport</a>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <img src="https://images.unsplash.com/photo-1611924137885-1c157736d18b?w=400&h=300&fit=crop" alt="Eco Collection">
+                        <div class="collection-info">
+                            <h3>Eco Collection</h3>
+                            <p>Sustainable fashion for the future</p>
+                            <a href="#products" class="btn btn-outline">Shop Eco</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="products-header">
+                    <h2 class="section-title">Our Hoodies</h2>
+                    <div class="products-filters">
+                        <select id="sortSelect" class="filter-select">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name A-Z</option>
+                        </select>
+                        <select id="sizeFilter" class="filter-select">
+                            <option value="all">All Sizes</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+                <div class="products-footer">
+                    <button id="loadMoreBtn" class="btn btn-outline">Load More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Free Shipping</h3>
+                        <p>Free shipping on orders over $75</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-undo"></i>
+                        <h3>Easy Returns</h3>
+                        <p>30-day hassle-free returns</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Quality Guarantee</h3>
+                        <p>Premium materials, guaranteed</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Customer support when you need it</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to get special offers, free giveaways, and new collection updates.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-subtotal">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">$0.00</span>
+                </div>
+                <div class="cart-shipping">
+                    <span>Shipping:</span>
+                    <span id="cartShipping">Free</span>
+                </div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="proceedToCheckout()">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Checkout</h3>
+                <button class="close-modal" onclick="closeCheckout()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="checkoutForm" class="checkout-form">
+                <div class="checkout-steps">
+                    <div class="step-indicator">
+                        <div class="step active" data-step="1">1</div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="2">2</div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="3">3</div>
+                    </div>
+                </div>
+                
+                <!-- Step 1: Shipping -->
+                <div class="checkout-step active" data-step="1">
+                    <h4>Shipping Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" name="zip" required>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary next-step">Continue to Payment</button>
+                </div>
+
+                <!-- Step 2: Payment -->
+                <div class="checkout-step" data-step="2">
+                    <h4>Payment Information</h4>
+                    <div class="payment-methods">
+                        <div class="payment-method active">
+                            <input type="radio" id="credit" name="payment" value="credit" checked>
+                            <label for="credit"><i class="fas fa-credit-card"></i> Credit Card</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="paypal" name="payment" value="paypal">
+                            <label for="paypal"><i class="fab fa-paypal"></i> PayPal</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card">Card Number</label>
+                        <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameOnCard">Name on Card</label>
+                        <input type="text" id="nameOnCard" name="nameOnCard" required>
+                    </div>
+                    <div class="form-row">
+                        <button type="button" class="btn btn-secondary prev-step">Back</button>
+                        <button type="button" class="btn btn-primary next-step">Review Order</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Review -->
+                <div class="checkout-step" data-step="3">
+                    <h4>Review Your Order</h4>
+                    <div class="order-review">
+                        <div class="review-section">
+                            <h5>Shipping Address</h5>
+                            <div id="reviewAddress"></div>
+                        </div>
+                        <div class="review-section">
+                            <h5>Payment Method</h5>
+                            <div id="reviewPayment"></div>
+                        </div>
+                        <div class="review-section">
+                            <h5>Order Items</h5>
+                            <div id="orderItems"></div>
+                        </div>
+                        <div class="order-total">
+                            <strong>Total: <span id="orderTotal">$0.00</span></strong>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button type="button" class="btn btn-secondary prev-step">Back</button>
+                        <button type="submit" class="btn btn-primary submit-order">Place Order</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Order Placed Successfully!</h3>
+            <p>Thank you for your purchase. You will receive a confirmation email shortly.</p>
+            <div class="order-details">
+                <p><strong>Order Number:</strong> <span id="orderNumber"></span></p>
+                <p><strong>Estimated Delivery:</strong> 3-5 business days</p>
+            </div>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
+    <!-- Newsletter Success Modal -->
+    <div class="modal" id="newsletterSuccessModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <i class="fas fa-envelope-circle-check"></i>
+            </div>
+            <h3>Subscribed Successfully!</h3>
+            <p>Thank you for subscribing to our newsletter. You'll receive updates about new collections and exclusive offers.</p>
+            <button class="btn btn-primary" onclick="closeNewsletterSuccessModal()">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
