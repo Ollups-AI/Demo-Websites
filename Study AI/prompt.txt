@@ -1,0 +1,1 @@
+Build a landing page + waitlist for an AI productivity app for students, with pricing section and email collection.
